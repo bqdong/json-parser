@@ -62,7 +62,30 @@ where
     }
 }
 
-pub fn parse(_json: &str) -> Json {
+pub struct SpecialToken;
+
+impl SpecialToken {
+    pub const LeftBrace: char = '{';
+    pub const RightBrace: char = '}';
+    pub const LeftBracket: char = '[';
+    pub const RightBracket: char = ']';
+    pub const Comma: char = ',';
+    pub const Colon: char = ':';
+    pub const DoubleQuote: char = '"';
+
+    // white space
+    pub const Space: char = ' ';
+    pub const NewLine: char = '\n';
+    pub const Tab: char = '\t';
+    pub const CarriageReturn: char = '\r';
+
+    pub const Backslash: char = '\\';
+}
+
+pub fn parse(json: &str) -> Json {
+    for c in json.chars() {
+        println!("{}", c);
+    }
     unimplemented!()
 }
 
